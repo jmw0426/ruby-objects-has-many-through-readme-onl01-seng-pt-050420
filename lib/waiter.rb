@@ -30,4 +30,8 @@ class Waiter
     worst_tip = meals.min { |a, b| a.tip <=> b.tip }
     worst_tip.customer
   end 
+  
+  def most_frequent_customer
+    Customer.all.select { |patron| 
+  end 
 end
