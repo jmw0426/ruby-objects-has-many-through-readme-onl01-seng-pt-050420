@@ -14,4 +14,12 @@ class Meal
   def self.all 
     @@all
   end
+  
+  def gross_income
+    self.all.total.each { |total| total + total }
+  end
+  
+  def all_tips
+    self.all.tip.each { |tips| tips + tips }
+  end
 end
