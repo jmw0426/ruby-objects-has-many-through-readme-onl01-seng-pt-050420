@@ -34,4 +34,17 @@ class Waiter
   def most_frequent_customer
     Customer.all.select { |patron| patron.waiter == self } 
   end 
+  
+  def tips
+    Meal.all.select { |waiter| waiter.tip == self }
+  end
+  
+  def most_tips
+    highest_tips = tips.max { |a, b| a.tip <=> b.tip }
+    highest_tips.waiter
+  end
+  
+  def most_experienced
+    self.all.yrs_experience.sort
+  end
 end
