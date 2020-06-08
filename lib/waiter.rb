@@ -32,6 +32,6 @@ class Waiter
   end 
   
   def most_frequent_customer
-    Customer.all.select { |patron| 
+    Customer.all.select { |patron| patron.waiter == self } 
   end 
 end
